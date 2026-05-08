@@ -20,9 +20,9 @@ const arrGroups = [
  * @returns {string[]}
  * The function takes an array of group names, checks for pattern matching, and returns an array of strings with the results
  */
-function checkGroup2(arr) {
+function checkGroup(arr) {
   const resultArr = [];
-  const reg = /^(FD|fd|FM|fm|FE|fe)20\d{2}(-\d+)?$/;
+  const reg = /^(F[DME]|f[dme])20\d{2}(-\d+)?$/;
   for (let i = 0; i < arr.length; i++) {
     const res = reg.test(arr[i]) ? 'Success' : 'Error';
     resultArr[i] = `${arr[i]}: ${res}`;
@@ -31,4 +31,4 @@ function checkGroup2(arr) {
   return resultArr;
 }
 
-console.log(checkGroup2(arrGroups));
+console.log(checkGroup(arrGroups));
